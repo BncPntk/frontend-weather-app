@@ -34,9 +34,9 @@ export default function App() {
             />
 
             {city && (
-                <div className="w-full max-w-4xl">
+                <div className="w-full max-w-4xl px-5">
                     <p
-                        className="text-xl mb-2 text-center md:text-left cursor-pointer text-gray-100 hover:underline hover:text-gray-200"
+                        className="text-xl mb-2 mt-2 text-left cursor-pointer text-gray-100 hover:underline hover:text-gray-200"
                         onClick={() => setIsModalOpen(true)}
                     >
                         {city.name}
@@ -45,7 +45,7 @@ export default function App() {
                     <Weather latitude={city.latitude} longitude={city.longitude}/>
 
                     <footer>
-                        <p className="text-xs text-gray-100 pt-32">Péntek Bence</p>
+                        <p className="text-xs text-center md:text-left text-gray-100 pt-32">Péntek Bence</p>
                     </footer>
                 </div>
             )}
