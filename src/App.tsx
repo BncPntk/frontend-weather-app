@@ -33,6 +33,16 @@ export default function App() {
                 onClose={() => setIsModalOpen(false)}
             />
 
+            {/*Ha nincs kiválasztott város és nem látszik a modal*/}
+            {!city && !isModalOpen && (
+                <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="mt-20 bg-white text-gray-800 px-4 py-2 rounded shadow hover:bg-gray-100"
+                >
+                    Város kiválasztása
+                </button>
+            )}
+
             {city && (
                 <div className="w-full max-w-4xl px-5">
                     <p

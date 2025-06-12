@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import TemperatureChart from "./TemperatureChart";
 
 type Props = {
     latitude: number;
@@ -87,6 +88,11 @@ export default function Weather({latitude, longitude}: Props) {
                             );
                         })}
                     </ul>
+
+                    <TemperatureChart
+                        labels={weather.daily.time.map(getDayName)}
+                        temperatures={weather.daily.temp_2m_max}
+                    />
                 </div>
             </div>
         </div>
