@@ -53,7 +53,7 @@ export default function CitySelector({ isOpen, onSelect, onClose }: Props) {
                 >
                     ×
                 </button>
-                <h2 className="text-lg mb-2">Város keresése</h2>
+                <h2 className="text-lg mb-2 text-gray-800">Város keresése</h2>
 
                 <input
                     type="text"

@@ -1,5 +1,6 @@
 import {useState} from "react";
 import CitySelector from "./components/CitySelector";
+import Weather from "./components/Weather.tsx";
 
 type City = {
     name: string;
@@ -22,7 +23,7 @@ export default function App() {
     }
 
     return (
-        <div className="p-4 text-center">
+        <div className="flex flex-col items-center justify-center px-4 py-8">
             <CitySelector
                 isOpen={isModalOpen}
                 onSelect={(selectedCity) => {
@@ -33,12 +34,20 @@ export default function App() {
             />
 
             {city && (
-                <p
-                    className="mt-6 text-2xl cursor-pointer text-gray-100 hover:underline hover:text-gray-200"
-                    onClick={() => setIsModalOpen(true)}
-                >
-                    {city.name}
-                </p>
+                <div className="w-full max-w-4xl">
+                    <p
+                        className="text-xl mb-2 text-center md:text-left cursor-pointer text-gray-100 hover:underline hover:text-gray-200"
+                        onClick={() => setIsModalOpen(true)}
+                    >
+                        {city.name}
+                    </p>
+
+                    <Weather latitude={city.latitude} longitude={city.longitude}/>
+
+                    <footer>
+                        <p className="text-xs text-gray-100 pt-32">Péntek Bence</p>
+                    </footer>
+                </div>
             )}
         </div>
     );
